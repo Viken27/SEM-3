@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab-4-2</title>
+</head>
+<body>
+<script type="text/javascript">
+	n = prompt("Enter size of array : ");
+	arr = [];
+	for(i=0;i<n;i++){
+		arr[i] = prompt("Enter value of arr["+i+"] : ");
+	}
+	arr.sort();
+	alert("After sorting : "+arr);
+	push = prompt("Enter value to push : ");
+	arr.push(push);
+	alert("After push : "+arr);
+	unshift = prompt("Enter value to unshift : ");
+	arr.unshift(unshift);
+	alert("After unshift : "+arr);
+	arr.pop();
+	alert("After pop : "+arr);
+	arr.shift();
+	alert("After shift : "+arr);
+	splice_num = prompt("Enter value you want to enter : ");
+	splice_index = prompt("Enter index where you want to enter : ");
+	arr.splice(splice_index,0,splice_num);
+	alert("After splice : "+arr);
+	low = prompt("Enter lowest index : ");
+	high = prompt("Enter highest index : ");
+	arr.slice(low,high);
+	alert("After slice : "+arr);
+</script>
+</body>
+</html>

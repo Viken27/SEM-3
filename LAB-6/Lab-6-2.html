@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab-6-2</title>
+</head>
+<body>
+<script type="text/javascript">
+	document.addEventListener('click', () => display('click'));
+	document.addEventListener('dbclick', () => display('dbclick'));
+	document.addEventListener('mouseout', () => display('mouseout'));
+	document.addEventListener('mousemove', () => display('mousemove'));
+	document.addEventListener('contextmenu', () => display('contextmenu'));
+	document.addEventListener('mouseup', () => display('mouseup'));
+	document.addEventListener('mousedown', () => display('mousedown'));
+	document.addEventListener('mouseleave', () => display('mouseleave'));
+	document.addEventListener('mouseover', () => display('mouseover'));
+	document.addEventListener('mouseenter', () => display('mouseenter'));
+	function display(id){
+		console.log("Mouse Action : "+id);
+
+	}
+</script>
+</body>
+</html>

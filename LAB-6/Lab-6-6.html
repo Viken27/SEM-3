@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab-6-6</title>
+</head>
+<body>
+	<form method="post" onsubmit="return checkValid()">
+		<h1>Student Registration</h1>
+		<label>FullName: </label><input type="text" id="name" required><br>
+		<label>Email: </label><input type="email" id="email" required><br>
+		<label>Mobile No: </label><input type="tel" id="mobile" required><br>
+		<label>Address: </label><textarea id="address" required></textarea><br>
+		<label>Nationality: </label>
+		<select id="nationality" required>
+			<option value="US">US</option>
+			<option value="UK">UK</option>
+			<option value="CA">Canada</option>
+			<option value="AU">Australia</option>
+		</select><br>
+		<label>Date Of Birth: </label><input type="date" id="birth" required><br>
+		<label>CPI: </label><input type="number" id="cpi" required><br>
+		<label>University: </label><input type="text" id="university" required><br>
+		<div>
+			<button type="submit">Submit</button>
+			<button type="reset">Cancel</button>
+		</div>
+	</form>
+
+	<script type="text/javascript">
+		function checkValid() {
+			var name = document.getElementById('name').value;
+			var email = document.getElementById('email').value;
+			var mobile = document.getElementById('mobile').value;
+			var address = document.getElementById('address').value;
+			var nationality = document.getElementById('nationality').value;
+			var dob = document.getElementById('birth').value;
+			var cpi = document.getElementById('cpi').value;
+			var university = document.getElementById('university').value;
+
+			var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+			var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			var mobileRegex = /^\d{10}$/;
+			var cpiRegex = /^\d+(\.\d{1,2})?$/;
+
+			if (!nameRegex.test(name)) {
+				alert("Invalid FullName");
+				return false;
+			}
+
+			if (!emailRegex.test(email)) {
+				alert("Invalid Email");
+				return false;
+			}
+
+			if (!mobileRegex.test(mobile)) {
+				alert("Invalid Mobile Number");
+				return false;
+			}
+
+			if (!cpiRegex.test(cpi)) {
+				alert("Invalid CPI");
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+</body>
+</html>

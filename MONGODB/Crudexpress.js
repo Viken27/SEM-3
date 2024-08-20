@@ -1,0 +1,20 @@
+import bodyParser from './bodyParser';
+
+const mongoose = require('mongoose');
+const schema = require('Schema');
+mongoose.connect(connectionString).then(()=>{
+    const app = express();
+   app.use(nodyParser.urllencoded({extends: false}));
+   console.log("Connection Established");
+   app.get('/Home',async (req, res)=>{
+    const result = await faculty.find();
+    res.json(result);
+   });
+   app.get('/Home/:id',async (req, res)=>{
+    const result = await faculty.findOne(req.params.id);
+    res.json(result);
+   });
+   app.listen(7000,()=>{
+    console.log("Server is running on port 7000");
+   });
+});
